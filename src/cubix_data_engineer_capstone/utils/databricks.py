@@ -33,20 +33,19 @@ def write_file_to_volume(
     :param format:      The format of the file ("csv", "json", "delta", "parquet").
     :param mode:        Default "overwrite", write mode.
     :param partition_by:List of column to partition by, default is None.
-    
-    
+
+
     """
 
     if format not in ["csv", "parquet", "delta"]:
         raise ValueError(f"Invalind format: {format}. Supported formates are: csv, parquet, delta.")
-    
+
     writer = df.write.mode(mode).format(format)
     if format == "csv":
         writer = writer.option("header", True)
 
-    if partition_by: 
+    if partition_by:
         writer = writer.partitionBy(*partition_by)
-    
-    
-    writer.save(full_path)
 
+
+    writer.save(full_path)
