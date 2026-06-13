@@ -33,5 +33,3 @@ def get_calendar(calendar_raw: DataFrame) -> DataFrame:
         )
         .dropDuplicates()
     )
-
-  

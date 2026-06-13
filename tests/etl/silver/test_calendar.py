@@ -64,15 +64,15 @@ def test_get_calendar(spark):
                 "Sunday",
                 "January",
                 1,
-                1, 
-                52, 
-                1, 
-                2017, 
-                2016, 
-                1, 
-                1, 
-                7, 
-                1, 
+                1,
+                52,
+                1,
+                2017,
+                2016,
+                1,
+                1,
+                7,
+                1,
                 201701
             )
         ],
@@ -80,5 +80,3 @@ def test_get_calendar(spark):
     )
 
     spark_testing.assertDataFrameEqual(result, expected)
-
-

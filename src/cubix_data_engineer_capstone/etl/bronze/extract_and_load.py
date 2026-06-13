@@ -15,7 +15,7 @@ def bronze_ingest(
     :param file_name:                   Name of the file to ingest.
     :param container_name:              Name of the container holding the files.
     :param partition_by:                Column(s) to partition on. "None" by default.
-    
+
     """
     df = read_file_from_datalake(container_name, f"{source_path}/{file_name}", "csv")
 
